@@ -6,7 +6,7 @@ permissions:
   contents: read
 
 jobs:
-  fmt:
+  ci:
     runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
@@ -26,3 +26,6 @@ jobs:
 
       - name: Check fmt
         run: v fmt -verify .
+
+      - name: Check fmt
+        run: v test .
