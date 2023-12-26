@@ -19,9 +19,8 @@ jobs:
 
       - name: Setup Vlang
         run: |
-          set -e
-          git clone https://github.com/vlang/v
-          cd v
+          git clone https://github.com/vlang/v $HOME/v
+          cd $HOME/v
           make
           sudo ./v symlink
 
