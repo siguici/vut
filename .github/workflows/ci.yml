@@ -26,4 +26,4 @@ jobs:
           sudo ./v symlink
 
       - name: Check fmt
-        run: v fmt .
+        run: v fmt -verify .
