@@ -1,26 +1,26 @@
 module vest
 
 @[assert_continues]
-pub fn assert_nil(expected voidptr) {
-	assert isnil(expected), '${expected} should be nil'
+pub fn assert_that[E, P](assertion bool, expected E, provided P) {
+	assert assertion, '`${expected}` expected, but `${provided}` provided'
 }
 
-@[assert_continues]
-pub fn assert_true(expected bool) {
-	assert expected != true, '${expected} should be true'
+pub fn assert_nil(provided voidptr) {
+	assert_that(isnil(provided), 'nil', typeof(provided).name)
 }
 
-@[assert_continues]
-pub fn assert_false(expected bool) {
-	assert expected == false, '${expected} should be false'
-}
-
-@[assert_continues]
 pub fn assert_equal[E, P](expected E, provided P) {
-	assert expected == provided, '${expected} should be equal to ${provided}'
+	assert_that(expected == provided, expected, provided)
 }
 
-@[assert_continues]
-pub fn assert_is[E, T](expected E) {
-	assert expected is T, '${expected} should be of type ${T}'
+pub fn assert_is[T, P](provided P) {
+	assert_that(provided is T, T, typeof(provided).name)
+}
+
+pub fn assert_true(provided bool) {
+	assert_equal(provided, true)
+}
+
+pub fn assert_false(provided bool) {
+	assert_equal(provided, false)
 }

@@ -90,7 +90,9 @@ pub fn expect[E](expected E) Expectation[E] {
 }
 
 pub fn expect_bool(expected bool) BoolExpectation {
-	return BoolExpectation{expected}
+	return BoolExpectation{
+		expected: expected
+	}
 }
 
 pub fn (expectation VoidptrExpectation) to_be_nil() VoidptrExpectation {
