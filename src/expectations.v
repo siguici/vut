@@ -115,7 +115,12 @@ pub fn (expectation Expectation[E]) to_equal[P](provided P) Expectation[E] {
 	return expectation
 }
 
-pub fn (expectation Expectation[E]) assert_is[T]() Expectation[E] {
+pub fn (expectation Expectation[E]) to_be[T]() Expectation[E] {
 	assert_is[T](expectation.expected)
+	return expectation
+}
+
+pub fn (expectation Expectation[E]) to_be_primitive() Expectation[E] {
+	assert_primitive(expectation.expected)
 	return expectation
 }
