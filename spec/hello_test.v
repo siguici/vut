@@ -5,5 +5,5 @@ fn hello(who string) string {
 }
 
 fn test_hello() {
-	expect(hello('Vest')).equal('Hello Vest!')
+	expect(hello('Vest')).to_equal('Hello Vest!')
 }
