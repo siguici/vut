@@ -1,6 +1,6 @@
 # Vest
 
-A unit testing framework inspired by Jest (JavaScript) and Pest (PHP).
+Perform unit testing in V with better DX. Vest's API is inspired by Jest (JavaScript) and Pest (PHP).
 
 ## Installation
 
