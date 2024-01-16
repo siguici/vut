@@ -27,5 +27,5 @@ jobs:
       - name: Check fmt
         run: v fmt -verify .
 
-      - name: Check fmt
+      - name: Validate specs
         run: v test .
