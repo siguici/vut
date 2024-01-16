@@ -1,126 +1,45 @@
 module vunit
 
 @[params]
-struct Expectation[E] {
-	expected E
+struct Expectation[T] {
+	val T
 }
 
-@[params]
-struct BoolExpectation {
-	Expectation[bool]
+pub fn expect[T](val T) Expectation[T] {
+	return Expectation[T]{val}
 }
 
-@[params]
-struct StringExpectation {
-	Expectation[string]
+pub fn (this Expectation[voidptr]) to_be_nil() Expectation[voidptr] {
+	assert_nil(this.val)
+	return this
 }
 
-@[params]
-struct RuneExpectation {
-	Expectation[rune]
+pub fn (this Expectation[T]) to_be_bool() Expectation[T] {
+	assert_bool(this.val)
+	return this
 }
 
-@[params]
-struct I8Expectation {
-	Expectation[i8]
+pub fn (this Expectation[bool]) to_be_true() Expectation[bool] {
+	assert_true(this.val)
+	return this
 }
 
-@[params]
-struct U8Expectation {
-	Expectation[u8]
+pub fn (this Expectation[bool]) to_be_false() Expectation[bool] {
+	assert_false(this.val)
+	return this
 }
 
-@[params]
-struct I16Expectation {
-	Expectation[i16]
+pub fn (this Expectation[T]) to_equal[P](provided P) Expectation[T] {
+	assert_equal(this.val, provided)
+	return this
 }
 
-@[params]
-struct U16Expectation {
-	Expectation[u16]
+pub fn (this Expectation[T]) to_be[E]() Expectation[T] {
+	assert_is[E, T](this.val)
+	return this
 }
 
-@[params]
-struct IntExpectation {
-	Expectation[int]
-}
-
-@[params]
-struct U32Expectation {
-	Expectation[u32]
-}
-
-@[params]
-struct I64Expectation {
-	Expectation[i64]
-}
-
-@[params]
-struct U64Expectation {
-	Expectation[u64]
-}
-
-@[params]
-struct F32Expectation {
-	Expectation[f32]
-}
-
-@[params]
-struct F64Expectation {
-	Expectation[f64]
-}
-
-@[params]
-struct ISizeExpectation {
-	Expectation[isize]
-}
-
-@[params]
-struct USizeExpectation {
-	Expectation[usize]
-}
-
-@[params]
-struct VoidptrExpectation {
-	Expectation[voidptr]
-}
-
-pub fn expect[E](expected E) Expectation[E] {
-	return Expectation[E]{expected}
-}
-
-pub fn expect_bool(expected bool) BoolExpectation {
-	return BoolExpectation{
-		expected: expected
-	}
-}
-
-pub fn (expectation VoidptrExpectation) to_be_nil() VoidptrExpectation {
-	assert_nil(expectation.expected)
-	return expectation
-}
-
-pub fn (expectation BoolExpectation) to_be_true() BoolExpectation {
-	assert_true(expectation.expected)
-	return expectation
-}
-
-pub fn (expectation BoolExpectation) to_be_false() BoolExpectation {
-	assert_false(expectation.expected)
-	return expectation
-}
-
-pub fn (expectation Expectation[E]) to_equal[P](provided P) Expectation[E] {
-	assert_equal(expectation.expected, provided)
-	return expectation
-}
-
-pub fn (expectation Expectation[E]) to_be[T]() Expectation[E] {
-	assert_is[T](expectation.expected)
-	return expectation
-}
-
-pub fn (expectation Expectation[E]) to_be_primitive() Expectation[E] {
-	assert_primitive(expectation.expected)
-	return expectation
+pub fn (this Expectation[T]) to_be_primitive() Expectation[T] {
+	assert_primitive(this.val)
+	return this
 }
