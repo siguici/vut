@@ -17,6 +17,30 @@ pub type SanitizerCallback[T] = fn (value T) ?T
 
 pub type ValidatorCallback[T] = fn (value T) !
 
+pub struct Parsing[T] {
+	value T
+}
+
+pub fn Parsing.from[T](value T) Parsing[T] {
+	return Parsing{value}
+}
+
+pub fn parse[T](value T) Parsing[T] {
+	return Parsing.from(value)
+}
+
+pub struct Filtering[T] {
+	value T
+}
+
+pub fn Filtering.of[T](value T) Filtering[T] {
+	return Filtering{value}
+}
+
+pub fn filter[T](value T) Filtering[T] {
+	return Filtering.of(value)
+}
+
 @[params]
 pub struct SchemaConfig[T] {
 	reporter ReporterContract[T]
