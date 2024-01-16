@@ -1,4 +1,4 @@
-module vest
+module vut
 
 @[params]
 struct Expectation[E] {

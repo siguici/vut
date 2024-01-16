@@ -1,6 +1,8 @@
 # Binaries for programs and plugins
 main
+vut
 vest
+vunit
 *.exe
 *.exe~
 *.so

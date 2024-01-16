@@ -1,4 +1,4 @@
-import vest { expect }
+import vut { expect }
 
 fn test_primitive() {
 	expect(false).to_be_primitive()

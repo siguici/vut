@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         operating-system: [ubuntu-latest]
-    name: CI Vest on ${{ matrix.operating-system }}
+    name: VUT on ${{ matrix.operating-system }}
 
     steps:
       - name: Checkout

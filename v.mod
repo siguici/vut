@@ -1,6 +1,6 @@
 Module {
-	name: 'vest'
-	description: "Perform unit testing in V with better DX. Vest's API is inspired by Jest (JavaScript) and Pest (PHP)."
+	name: 'VUT'
+	description: "Validation and Unit Testing Framework for Vlang."
 	version: '0.0.0'
 	license: 'MIT'
 	dependencies: []

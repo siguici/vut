@@ -1,29 +1,29 @@
-# Vest
+# VUT - Validation and Unit Testing Framework for Vlang
 
-Perform unit testing in V with better DX. Vest's API is inspired by Jest (JavaScript) and Pest (PHP).
+VUT is a minimalistic framework for validating rules and conducting unit tests in Vlang. Simplify code validation and ensure component correctness effortlessly.
 
 ## Installation
 
-- Install Vest using VPM (recommanded):
+- Install VUT using VPM (recommanded):
 
 ```shell
-v install siguici.vest
+v install siguici.vut
 ```
 
-- Install Vest using Git:
+- Install VUT using Git:
 
 ```shell
 mkdir ${V_MODULES:-$HOME/.vmodules}/siguici
-git  clone --depth=1 https://github.com/siguici/vest ${V_MODULES:-$HOME/.vmodules}/siguici/vest
+git  clone --depth=1 https://github.com/siguici/vut ${V_MODULES:-$HOME/.vmodules}/siguici/vut
 ```
 
-- Use Vest as a project dependency:
+- Use VUT as a project dependency:
 
 ```v
 Module {
     //...
 	dependencies: [
-        'siguici.vest'
+        'siguici.vut'
         //...
     ]
 }
@@ -33,13 +33,13 @@ Module {
 ## Usage
 
 ```v
-import vest { expect }
+import vut { expect }
 
 fn hello(who string) string {
 	return 'Hello ${who}!'
 }
 
 fn test_hello() {
-	expect(hello('Vest')).to_equal('Hello Vest!')
+	expect(hello('VUT')).to_equal('Hello VUT!')
 }
 ```
