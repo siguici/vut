@@ -19,3 +19,11 @@ pub fn (this Filtering[T]) is_bool() bool {
 		false
 	}
 }
+
+pub fn (this Filtering[bool]) is_true() bool {
+	return this.value
+}
+
+pub fn (this Filtering[bool]) is_false() bool {
+	return !this.value
+}
