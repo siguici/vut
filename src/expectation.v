@@ -1,4 +1,4 @@
-module vunit
+module vut
 
 struct Expectation[T] {
 	val T

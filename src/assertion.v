@@ -1,6 +1,4 @@
-module vunit
-
-import vest { filter }
+module vut
 
 const primitive_types = ['bool', 'string', 'rune', 'i8', 'u8', 'i16', 'u16', 'int', 'u32', 'i64',
 	'u64', 'isize', 'usize', 'f32', 'f64', 'voidptr']
@@ -40,5 +38,5 @@ pub fn assert_is[T, P](val P) {
 
 pub fn assert_primitive[P](val P) {
 	p_type := typeof(val).name
-	assert_that(p_type in vunit.primitive_types, 'primitive', p_type)
+	assert_that(p_type in vut.primitive_types, 'primitive', p_type)
 }

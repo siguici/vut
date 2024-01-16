@@ -1,6 +1,4 @@
-module vunit
-
-import vest { filter }
+module vut
 
 struct Assurance[T] {
 	val T

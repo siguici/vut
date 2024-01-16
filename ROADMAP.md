@@ -1,7 +1,5 @@
 # VUT Feature Roadmap
 
-## Vest
-
 - [ ] **Validation Filter:**
   - Implement a filter for validation with an expressive syntax.
   - Example: `filter(val).is_bool()`.
@@ -31,8 +29,6 @@
     my_schema := schema[string].new(reporter, rules, reason)
     my_schema.validate(value) // Error report on failure
     ```
-
-## VUnit
 
 - [ ] **Expectation:**
   - Implement expectation functions for specific checks.

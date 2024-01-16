@@ -17,10 +17,6 @@ pub type SanitizerCallback[T] = fn (value T) ?T
 
 pub type ValidatorCallback[T] = fn (value T) !
 
-pub struct Parsing[T] {
-	value T
-}
-
 @[params]
 pub struct SchemaConfig[T] {
 	reporter ReporterContract[T]

@@ -1,4 +1,4 @@
-module vest
+module vut
 
 pub struct Filtering[T] {
 	value T
