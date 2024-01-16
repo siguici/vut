@@ -22,7 +22,7 @@ pub fn assert_is[T, P](provided P) {
 
 pub fn assert_primitive[P](provided P) {
 	p_type := typeof(provided).name
-	assert_that(p_type in vut.primitive_types, 'primitive', p_type)
+	assert_that(p_type in vunit.primitive_types, 'primitive', p_type)
 }
 
 pub fn assert_true(provided bool) {
