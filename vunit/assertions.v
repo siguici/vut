@@ -14,7 +14,7 @@ fn assert_type[T](assertion bool, val T, typ string) {
 	assert_that(assertion, typ, typeof(val).name)
 }
 
-pub fn assert_nil(val voidptr) {
+pub fn assert_nil[T](val T) {
 	assert_type(filter(val).is_nil(), val, 'nil')
 }
 

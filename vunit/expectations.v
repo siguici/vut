@@ -1,6 +1,5 @@
 module vunit
 
-@[params]
 struct Expectation[T] {
 	val T
 }
@@ -9,7 +8,7 @@ pub fn expect[T](val T) Expectation[T] {
 	return Expectation[T]{val}
 }
 
-pub fn (this Expectation[voidptr]) to_be_nil() Expectation[voidptr] {
+pub fn (this Expectation[T]) to_be_nil() Expectation[T] {
 	assert_nil(this.val)
 	return this
 }

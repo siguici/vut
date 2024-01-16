@@ -1,17 +1,13 @@
-import vunit { assert_bool, assert_false, assert_nil, assert_true, expect }
+import vunit { ensure, expect }
 
-fn test_assert_nil() {
-	assert_nil(unsafe { nil })
+fn test_nil_unit() {
+	ensure(unsafe { nil }).is_nil()
+	expect(unsafe { nil }).to_be_nil()
 }
 
-fn test_assert_bool() {
-	assert_bool(true)
-	assert_bool(false)
-	assert_true(true)
-	assert_false(false)
-}
-
-fn test_expect_bool() {
+fn test_bool_unit() {
+	ensure(true).is_bool().is_true()
+	ensure(false).is_bool().is_false()
 	expect(true).to_be_bool().to_be_true()
 	expect(false).to_be_bool().to_be_false()
 }
