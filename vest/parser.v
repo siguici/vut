@@ -5,7 +5,7 @@ pub struct Parsing[T] {
 }
 
 pub fn Parsing.from[T](value T) Parsing[T] {
-	return Parsing{value}
+	return Parsing[T]{value}
 }
 
 pub fn parse[T](value T) Parsing[T] {
