@@ -5,9 +5,17 @@ pub struct Filtering[T] {
 }
 
 pub fn Filtering.of[T](value T) Filtering[T] {
-	return Filtering{value}
+	return Filtering[T]{value}
 }
 
 pub fn filter[T](value T) Filtering[T] {
 	return Filtering.of(value)
+}
+
+pub fn (this Filtering[T]) is_bool() bool {
+	return $if this.value is bool {
+		true
+	} $else {
+		false
+	}
 }
