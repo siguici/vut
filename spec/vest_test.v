@@ -1,8 +1,8 @@
 import vest { filter }
 
 fn test_nil() {
-	assert filter(unsafe { nil }).isnil()
-	assert !filter('').isnil()
+	assert filter(unsafe { nil }).is_nil()
+	assert !filter('').is_nil()
 }
 
 fn test_bool() {

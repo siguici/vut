@@ -20,7 +20,7 @@ pub fn (this Filtering[T]) is_bool() bool {
 	}
 }
 
-pub fn (this Filtering[T]) isnil() bool {
+pub fn (this Filtering[T]) is_nil() bool {
 	return isnil(this.value)
 }
 

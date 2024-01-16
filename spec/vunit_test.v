@@ -1,6 +1,15 @@
-import vunit { expect }
+import vunit { assert_nil, assert_bool, assert_true, assert_false, expect }
 
-// Test ensure, assert and expect
+fn test_assert_nil() {
+	assert_nil(unsafe { nil })
+}
+
+fn test_assert_bool() {
+	assert_bool(true)
+	assert_bool(false)
+	assert_true(true)
+	assert_false(false)
+}
 
 fn test_primitive() {
 	expect(false).to_be_primitive()
