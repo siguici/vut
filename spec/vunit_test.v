@@ -1,4 +1,6 @@
-import vut { expect }
+import vunit { expect }
+
+// Test ensure, assert and expect
 
 fn test_primitive() {
 	expect(false).to_be_primitive()
