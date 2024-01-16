@@ -1,4 +1,4 @@
-module vut
+module vunit
 
 @[params]
 struct Expectation[E] {
