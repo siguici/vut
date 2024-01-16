@@ -1,3 +1,5 @@
+module vut
+
 pub interface SanitizerContract[T] {
 	reason string
 	apply(value T) ?T
