@@ -27,3 +27,27 @@ pub fn (this Filtering[bool]) is_true() bool {
 pub fn (this Filtering[bool]) is_false() bool {
 	return !this.value
 }
+
+pub fn (this Filtering[T]) is_int() bool {
+	return $if this.value is $int {
+		true
+	} $else {
+		false
+	}
+}
+
+pub fn (this Filtering[T]) is_float() bool {
+	return $if this.value is $float {
+		true
+	} $else {
+		false
+	}
+}
+
+pub fn (this Filtering[T]) is_num() bool {
+	return $if this.value is $int || this.value is $float {
+		true
+	} $else {
+		false
+	}
+}
