@@ -2,6 +2,10 @@ module spec
 
 import vut { ensure, expect, filter }
 
+fn test_any() {
+	expect(vut.Any(0).bool()).to_be_false()
+}
+
 fn test_nil() {
 	assert filter(unsafe { nil }).is_nil()
 	assert !filter('').is_nil()

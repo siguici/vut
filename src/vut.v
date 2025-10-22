@@ -4,6 +4,9 @@ import v.vmod
 import os
 import cli
 import term
+import toml
+
+pub type Any = toml.Any
 
 const logo = '
  ██╗   ██╗ ██╗   ██╗ ████████╗
