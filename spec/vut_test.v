@@ -48,7 +48,14 @@ fn test_primitive() {
 	expect('hello').to_be_primitive()
 }
 
-fn test_expectation_fn() {
+fn test_fn() {
+	ensure('hello').is(fn (e vut.Assurance[string]) vut.Assurance[string] {
+		if e.val != 'hello' {
+			panic('hello expected, but ${e.val} val')
+		}
+		return e
+	})
+
 	expect('hello').to(fn (e vut.Expectation[string]) vut.Expectation[string] {
 		assert e.val == 'hello'
 		return e

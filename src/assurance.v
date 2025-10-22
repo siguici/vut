@@ -1,11 +1,17 @@
 module vut
 
+pub type AssuranceFn[T] = fn (this Assurance[T]) Assurance[T]
+
 struct Assurance[T] {
 	val T
 }
 
 pub fn ensure[T](val T) Assurance[T] {
 	return Assurance[T]{val}
+}
+
+pub fn (this Assurance[T]) is(assurance_fn AssuranceFn[T]) Assurance[T] {
+	return assurance_fn[T](this)
 }
 
 pub fn (this Assurance[T]) is_nil() Assurance[T] {
