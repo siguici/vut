@@ -49,7 +49,7 @@ fn test_primitive() {
 }
 
 fn test_fn() {
-	ensure('hello').is(fn (e vut.Assurance[string]) vut.Assurance[string] {
+	ensure('hello').is(fn (e vut.Insurance[string]) vut.Insurance[string] {
 		if e.val != 'hello' {
 			panic('hello expected, but ${e.val} val')
 		}
