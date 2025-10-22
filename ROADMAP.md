@@ -58,4 +58,16 @@
   - Implement parsers, filters, and schemas for more advanced usage.
   - Example: `Parser.parse(value, format)`.
 
+## Expected validation
+
+| Type           | Name          | Example                                 |
+| -------------- | ------------ | --------------------------------------- |
+| 🔤 string      | `min`, `max` | `string().min(3).max(100)`              |
+| 📧 email       | `email()`    | `string().email()`                      |
+| 🧍‍♂️ required | `required()` | `schema.rule(required())`               |
+| 🔢 number      | `min`, `max` | `number().min(0).max(100)`              |
+| 🧩 regex       | `matches()`  | `string().matches(r'^[a-z]+$')`         |
+| 👥 in          | `in([...])`  | `string().in(['admin', 'user'])`        |
+| ⚙ custom       | `custom(fn)` | `schema.rule(custom(fn (val) ? {...}))` |
+
 This roadmap covers a variety of features to enhance flexibility, expressiveness, and customization in Vest and VUnit. It can be adjusted based on project evolution and user feedback.
