@@ -1,4 +1,4 @@
-module main
+module spec
 
 import vut { ensure, expect, filter }
 
