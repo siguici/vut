@@ -1,3 +1,5 @@
+module main
+
 import vut { ensure, expect, filter }
 
 fn test_nil() {

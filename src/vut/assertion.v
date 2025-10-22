@@ -38,5 +38,5 @@ pub fn assert_is[T, P](val P) {
 
 pub fn assert_primitive[P](val P) {
 	p_type := typeof(val).name
-	assert_that(p_type in vut.primitive_types, 'primitive', p_type)
+	assert_that(p_type in primitive_types, 'primitive', p_type)
 }
