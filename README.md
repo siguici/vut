@@ -14,8 +14,8 @@ v install siguici.vut
 - Install VUT using Git:
 
 ```shell
-mkdir ${V_MODULES:-$HOME/.vmodules}/siguici
-git  clone --depth=1 https://github.com/siguici/vut ${V_MODULES:-$HOME/.vmodules}/siguici/vut
+mkdir ${VMODULES:-$HOME/.vmodules}/siguici
+git  clone --depth=1 https://github.com/siguici/vut ${VMODULES:-$HOME/.vmodules}/siguici/vut
 ```
 
 - Use VUT as a project dependency:
