@@ -47,3 +47,10 @@ fn test_primitive() {
 	expect(`a`).to_be_primitive()
 	expect('hello').to_be_primitive()
 }
+
+fn test_expectation_fn() {
+	expect('hello').to(fn (e vut.Expectation[string]) vut.Expectation[string] {
+		assert e.val == 'hello'
+		return e
+	}).to_equal('hello')
+}

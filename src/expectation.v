@@ -1,11 +1,17 @@
 module vut
 
+pub type ExpectationFn[T] = fn (this Expectation[T]) Expectation[T]
+
 struct Expectation[T] {
 	val T
 }
 
 pub fn expect[T](val T) Expectation[T] {
 	return Expectation[T]{val}
+}
+
+pub fn (this Expectation[T]) to(expectation_fn ExpectationFn[T]) Expectation[T] {
+	return expectation_fn[T](this)
 }
 
 pub fn (this Expectation[T]) to_be_nil() Expectation[T] {
